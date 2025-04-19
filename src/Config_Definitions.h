@@ -103,8 +103,8 @@ enum BatteryChargingStatus {
 // 1.3" OLED 128x64 displays commonly uses an SH1106 driver.
 // Choose driver below, only one can be defined!
 
-#define OLED_DRIVER_SSD1306
-// #define OLED_DRIVER_SH1106
+//#define OLED_DRIVER_SSD1306
+#define OLED_DRIVER_SH1106
 
 // Optional setting for enabling Blink mode when in Manual/FX mode.
 // Depending on the user preferences enabling blink can be a help
@@ -123,8 +123,8 @@ enum ButtonGpio {
     BUTTON_PRESET3_GPIO = 32,
     BUTTON_DELAY_GPIO = 32,
 
-    BUTTON_PRESET4_GPIO = 33,
-    BUTTON_REVERB_GPIO = 33,
+    BUTTON_PRESET4_GPIO = 35,
+    BUTTON_REVERB_GPIO = 35,
 
     BUTTON_BANK_DOWN_GPIO = 19,
     BUTTON_NOISEGATE_GPIO = 19,
@@ -148,7 +148,7 @@ const int LONG_BUTTON_PRESS_TIME = 1000;
 // The dedicated Preset LED GPIO pins LED_PRESET<n>_GPIO is defined
 // separately below under the #ifdef DEDICATED_PRESET_LEDS clause.
 
-// #define DEDICATED_PRESET_LEDS
+#define DEDICATED_PRESET_LEDS
 
 #ifdef DEDICATED_PRESET_LEDS
 enum LedGpio {
@@ -159,7 +159,7 @@ enum LedGpio {
     LED_NOISEGATE_GPIO = 23,
     LED_COMP_GPIO = 17,
 
-    LED_PRESET1_GPIO = 0,
+    LED_PRESET1_GPIO = 5, //changed from 0 to 5 to avoid conflict with GPIO 0,
     LED_PRESET2_GPIO = 4,
     LED_PRESET3_GPIO = 12,
     LED_PRESET4_GPIO = 15,
@@ -193,7 +193,7 @@ enum LedGpio {
 // to LOW. So we define an extra set of defines to allow them to be
 // controlled
 enum LedOptionalGpio {
-    OPTIONAL_GPIO_1 = 0,
+    OPTIONAL_GPIO_1 = 5, //changed from 0 to 5 to avoid conflict with GPIO 0
     OPTIONAL_GPIO_2 = 4,
     OPTIONAL_GPIO_3 = 12,
     OPTIONAL_GPIO_4 = 15
