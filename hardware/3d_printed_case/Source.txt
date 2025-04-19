@@ -1,0 +1,2 @@
+Source Model: https://www.thingiverse.com/thing:6952547
+Remixed to split the shell into 2 pieces for smaller printer bed
